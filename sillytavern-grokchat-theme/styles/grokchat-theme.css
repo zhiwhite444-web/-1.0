@@ -13,6 +13,7 @@
 }
 
 /* ===== 可折叠侧边栏（GrokChat 风格）===== */
+/* 原来的 #ai-config-button */
 #ai-config-button {
     position: fixed !important;
     top: 0;
@@ -25,6 +26,7 @@
     z-index: 9999;
     transition: transform var(--grokchat-transition-speed) ease;
 
+    /* 问题：对于已经拥有的样式（如 transform），使用 !important 强制覆盖 */
     transform: translateX(var(--grokchat-min-sidebar-width));
     box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
 }
@@ -65,12 +67,13 @@
     backdrop-filter: none !important;
 }
 
-#left-nav-panel.scrollableInner {
+#left-nav-panel .scrollableInner {
     padding: 16px;
     padding-right: 12px;
 }
 
 /* ===== 聊天窗口（增加左侧留白）===== */
+/* 原来的主聊天窗口 */
 .sillytavern-chat-window,
 .forwarding-mode .sillytavern-chat-window,
 #chat-context,
@@ -89,6 +92,12 @@
 .nv-mode #visual-novel-chat-container:hover {
     margin-left: 0 !important;
 }
+
+/* ===== 原有按钮移到侧边栏顶部 ===== */
+/* 将 top-settings-holder 移到侧边栏顶部 */
+
+/* ===== 工具栏（可选：移到右侧）===== */
+/* 右侧工具箱 */
 
 /* ===== 侧边栏菜单项样式 ===== */
 #left-nav-panel .menu_button {
@@ -120,26 +129,28 @@
 }
 
 /* ===== 滚动条美化 ===== */
-#left-nav-panel .scrollableInner::-webkit-scrollbar {
+#left-nav-panel::-webkit-scrollbar {
     width: 6px;
 }
 
-#left-nav-panel .scrollableInner::-webkit-scrollbar-track {
+#left-nav-panel::-webkit-scrollbar-track {
     background: transparent;
 }
 
-#left-nav-panel .scrollableInner::-webkit-scrollbar-thumb {
+#left-nav-panel::-webkit-scrollbar-thumb {
     background: rgba(255, 255, 255, 0.3);
     border-radius: 3px;
 }
 
-#left-nav-panel .scrollableInner::-webkit-scrollbar-thumb:hover {
+#left-nav-panel::-webkit-scrollbar-thumb:hover {
     background: rgba(255, 255, 255, 0.5);
 }
 
 /* ===== 输入框区域 ===== */
+/* 保持输入框区域在主视图内 */
 
 /* ===== 背景处理 ===== */
+/* 允许用户自定义背景通过 */
 body {
     position: relative;
 }
@@ -154,7 +165,7 @@ body {
     background-repeat: no-repeat;
 }
 
-/* ===== 战斗模式 ===== */
+/* ===== 战斗模式（Visual Novel）===== */
 .nv-mode-container #visual-novel-chat-container {
     margin-left: var(--grokchat-sidebar-width) !important;
     transition: margin-left var(--grokchat-transition-speed) ease;
@@ -176,7 +187,7 @@ body {
     }
 }
 
-/* ===== 默认状态 ===== */
+/* ===== 默认状态（侧边栏收起）===== */
 body.is-sidebar-collapsed #ai-config-button {
     transform: translateX(calc(var(--grokchat-min-sidebar-width) - 280px));
 }
@@ -186,11 +197,11 @@ body.dark-mode #ai-config-button {
     background: rgba(20, 20, 20, 0.95);
 }
 
-body.dark-mode #left-nav-panel .scrollableInner .menu_button {
+body.dark-mode #left-nav-panel .menu_button {
     background: rgba(60, 60, 60, 0.8);
     color: #e5e5e5;
 }
 
-body.dark-mode #left-nav-panel .scrollableInner .menu_button:hover {
+body.dark-mode #left-nav-panel .menu_button:hover {
     background: rgba(80, 80, 80, 0.9);
 }
