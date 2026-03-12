@@ -1,0 +1,9 @@
+{
+  "name": "酒馆美化1.0",
+  "author": "zhiwhite444",
+  "version": "1.0.0",
+  "extends": "",
+  "description": "基于 GrokChat 风格的 SillyTavern UI 美化扩展程序 - 将顶部菜单集成到左侧可折叠边栏，对话框菜单上集成，侧边栏下方对话滚动栏，输入框左侧预留立绘窗口",
+
+  "base": "sillytavern"
+}
