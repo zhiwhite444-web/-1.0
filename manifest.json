@@ -1,1 +1,23 @@
-
+{
+  "name": "SillyTavern GrokChat Theme",
+  "version": "1.0.0",
+  "type": "theme",
+  "author": "zhiwhite444",
+  "description": "GrokChat 风格的 SillyTavern UI 美化主题",
+  "repository_url": "https://github.com/zhiwhite444-web/-1.0",
+  "content_scripts": [
+    {
+      "matches": ["file://*", "http://*/*", "https://*/*"],
+      "css": ["style.css"],
+      "js": ["theme.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "permissions": [],
+  "web_accessible_resources": [
+    {
+      "resources": ["style.css", "theme.js"],
+      "matches": ["file://*", "http://*/*", "https://*/*"]
+    }
+  ]
+}
