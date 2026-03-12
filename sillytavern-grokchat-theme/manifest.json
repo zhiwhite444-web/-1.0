@@ -3,20 +3,20 @@
   "version": "1.0.0",
   "type": "theme",
   "author": "zhiwhite444",
-  "description": "GrokChat 风格的 SillyTavern UI 美化主题扩展",
+  "description": "GrokChat 风格的 SillyTavern UI 美化主题",
   "repository_url": "https://github.com/zhiwhite444-web/-1.0",
   "content_scripts": [
     {
       "matches": ["file://*", "http://*/*", "https://*/*"],
-      "css": ["styles/grokchat-theme.css"],
-      "js": ["scripts/grokchat-overlay.js"],
+      "css": ["style.css"],
+      "js": ["theme.js"],
       "run_at": "document_end"
     }
   ],
   "permissions": [],
   "web_accessible_resources": [
     {
-      "resources": ["styles/grokchat-theme.css", "scripts/grokchat-overlay.js"],
+      "resources": ["style.css", "theme.js"],
       "matches": ["file://*", "http://*/*", "https://*/*"]
     }
   ]
