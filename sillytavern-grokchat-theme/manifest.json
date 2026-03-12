@@ -1,13 +1,13 @@
 {
-  "manifest_version": 3,
   "name": "SillyTavern GrokChat Theme",
   "version": "1.0.0",
-  "description": "GrokChat 风格的 SillyTavern UI 美化主题 - 可折叠侧边栏、毛玻璃效果",
-  "author": "zhiwhite444",
   "type": "theme",
+  "author": "zhiwhite444",
+  "description": "GrokChat 风格的 SillyTavern UI 美化主题扩展",
+  "repository_url": "https://github.com/zhiwhite444-web/-1.0",
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["file://*", "http://*/*", "https://*/*"],
       "css": ["styles/grokchat-theme.css"],
       "js": ["scripts/grokchat-overlay.js"],
       "run_at": "document_end"
@@ -17,7 +17,7 @@
   "web_accessible_resources": [
     {
       "resources": ["styles/grokchat-theme.css", "scripts/grokchat-overlay.js"],
-      "matches": ["<all_urls>"]
+      "matches": ["file://*", "http://*/*", "https://*/*"]
     }
   ]
 }
